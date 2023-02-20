@@ -1,7 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY . .
-RUN npm i 
+RUN npm audit fix 
 
 RUN npm run build --prod
 
