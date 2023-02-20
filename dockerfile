@@ -1,9 +1,8 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY . .
-RUN npm audit fix 
-
-RUN npm run build --prod
+RUN npm install
+CMD ["npm", "start"]
 
 FROM nginx
 EXPOSE 80
